@@ -1,0 +1,819 @@
+
+
+selector:-webkit-full-screen {
+  display: block; /* displays the element only when in fullscreen */
+}
+selector:-moz-full-screen {
+  display: block; /* hides the element when not in fullscreen mode */
+}
+selector:-ms-fullscreen {
+  display: block;
+}
+selector:fullscreen {
+  display: block;
+}
+selector {
+  display: none; /* hides the element when not in fullscreen mode */
+}
+
+body > .container-fluid {
+    overflow: hidden;
+}
+
+#tipo_container label {
+	margin-top: 0;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.nav-tabs > li > a {
+    background-color: #87A9C6;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 0;
+}
+.nav-tabs > li > a:hover {
+    color: #333;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    background-color: #0B3861;
+    color: white;
+}
+
+.well {
+    margin-bottom: 5px;
+    padding: 10px;
+    position: relative;
+}
+
+.btn {
+	/*padding: 0;*/
+}
+
+.btn-thin {
+	width: 15px;
+	padding: 0;
+}
+
+.text-bold {
+	font-weight: bolder;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+input[type="number"]:hover,
+input[type="number"]:focus {
+    -moz-appearance: number-input;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+	
+.container {
+	max-width: 100%;
+	width: 100%;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+  background-color: white;
+  margin-top: 20px;
+}
+.form-signin h2 {
+  margin: 0;
+}
+.form-signin label {
+  margin-bottom: 0;
+  margin-top: 15px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="submit"] {
+  margin-top: 15px;
+}
+	
+	
+body {
+	background-color: whitesmoke;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	overflow: auto;
+}
+
+hr {
+	clear: both;
+}
+#cassainfo {
+    font-size: 25px;
+    font-weight: bolder;
+    margin: 0;
+    cursor: pointer;
+}
+#cassainfo strong {
+	text-transform: uppercase;
+	font-size: 30px;
+	font-weight: bolder;
+}
+
+#impostazioni, #impostazioni-mobile {
+	position: fixed;
+	bottom: 20px;
+	right: 0;
+	opacity: 0.5;
+}
+#impostazioni:hover, #impostazioni-mobile:hover {
+	opacity: 1;
+}
+#impostazioni a.btn {
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    padding: 10px;
+}
+/*
+#omaggio-coperti {
+	background-color: blue;
+}
+#omaggio-coperti h4, #quantita-coperti-omaggio {
+	color: white;
+	background-color: blue;
+}
+*/
+.omaggio-visible, #omaggio-coperti {
+	display: none;
+}
+.omaggio-view .omaggio-visible {
+	display: table-cell;
+}
+.omaggio-view #omaggio-coperti {
+	display: block;
+}
+
+#totale {
+	color: red;
+	clear: both;
+	font-weight: bolder;
+	font-size: 40px;
+	width: 100%;
+}
+
+input.quantita, input.quantita-omaggio {
+	text-align: center;
+	padding-left: 0;
+	padding-right: 0;
+}
+input.quantita:not([value='0']), input.quantita.attivo {
+	background-color: lightgreen;
+}
+#quantita-coperti, #diminuisci-coperti, #aumenta-coperti {
+	height: 50px;
+}
+#quantita-coperti {
+	font-size: 16px;
+	font-weight: bold;
+}
+#omaggio-coperti .btn, #quantita-coperti-omaggio, .td_omaggio .btn {
+	color: #333;
+}
+#omaggio-coperti .btn:hover, .td_omaggio .btn:hover {
+	background-color: skyblue;
+}
+input#quantita-coperti.attivo, input.quantita:not([value='0']), input.quantita.attivo {
+	background-color: lightgreen;
+	color: black;
+	border-color: forestgreen;
+	font-weight: bold;
+	text-shadow: 0 0 4px whitesmoke;
+	/*border-width: 0;*/
+}
+#quantita-coperti-omaggio {
+	/*padding: 0;*/
+}
+#tipoordine {
+	border: 1px solid black;
+	overflow: auto;
+}
+.div_add {
+	font-weight: bold;
+	position: relative;
+}
+.articolo {
+	/*height: 100%;*/
+	position: relative;
+	letter-spacing: -1px;
+	white-space: normal;
+	/*line-height: 1;*/
+}
+.dimeno {
+	background-color: red;
+}
+#subito {
+	display: none;
+	position: absolute;
+	z-index: 10;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+#subito_trasparenza {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: orange;
+	/* for IE */
+	filter:alpha(opacity=60);
+	/* CSS3 standard  */
+	opacity:0.6;
+	}
+#subito_contenitore {
+	width: 50%;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -25%;
+	background-color: green;
+	font-weight:bold;
+	color:#000000;
+	font-size: xx-large;
+	padding: 40px;
+	overflow-y: auto;
+	}
+#conferma-subito {
+	position: absolute;
+    top: 0px;
+    right: 0px;
+	width: 40%;
+	height: 100%;
+	font-weight:bold;
+	color:#000000;
+	font-size: xx-large;
+	}
+#logo {
+	height: 10%;
+}
+#logo_contenitore {
+	}
+/*#user {
+	height: 10%;
+}*/
+/*
+#infoordine {
+	height: 20%;
+}
+.box-check {
+	display: block;
+	font-weight: 900;
+	padding: 3px;
+	margin: -6px auto 0;
+	float: right;
+}
+*/
+
+.box-check label {
+    /*background-color: #ccc;*/
+    cursor: pointer;
+    /*padding: 4px 10px;*/
+}
+.box-check label:hover {
+	background-color: skyblue;
+}
+.box-check input {
+	display: none;
+}
+
+	
+/*#note {
+	height: 12%;
+}
+#note-cucina {
+	height: 50%;
+}*/
+#tabelle {
+	height: 100%;
+	/*overflow-y: hidden; */
+	overflow: auto;
+}
+
+
+#tabelle_contenitore {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	}
+.mostra {
+	height: 5%;
+	font-weight: bold;
+}
+/*.mostra:hover {
+	background-color: red;
+}
+.active-mostra {
+	background-color: red;
+}*/
+.td_add small {
+	font-size: 60%;
+}
+
+.wello {
+	padding: 2px;
+	display: none;
+}
+.omaggio-view .wello {
+	display: block;
+}
+.omaggio-view .td_add > .btn-add-tavoli {
+	width: 80%;
+	float: left;
+	clear: both;
+}
+.omaggio-view .td_add > .wello {
+	width: 20%;
+	float: right;
+	padding: 0;
+}
+
+.omaggio-view .td_add .btn-add-omaggi {
+	opacity: 0.8;
+}
+.omaggio-view .td_add .btn-add-omaggi:hover {
+	opacity: 1;
+}
+
+.td_add .btn-add-tavoli .aumenta {
+	color: black;
+	position: relative;
+	text-shadow: 0 0 4px white;
+}
+.td_add .btn-add-tavoli .aumenta:hover {
+	background-color: #666;
+	color: whitesmoke;
+	text-shadow: none;
+}
+
+.td_scorta {
+	position: absolute;
+	top: 0px;
+	left: 4px;
+	font-size: 12px;
+}
+.td_prezzo {
+	position: absolute;
+	bottom: 0px;
+	right: 4px;
+	font-size: 12px;
+}
+.td_id {
+	position: absolute;
+	bottom: 0px;
+	left: 4px;
+}
+.div_add .info-prodotto {
+	/*z-index: 100;*/
+	display: none;
+	color: white;
+}
+.div_add:hover .info-prodotto {
+	display: block;
+	text-shadow: 0 0 2px black;
+}
+
+/*
+#conto {
+	height: 50%;
+}
+*/
+#resoconto {
+	position: relative;
+	max-height: 50%;
+	overflow: auto;
+}	
+#resoconto_contenitore {
+	/*max-height: 200px;*/
+	overflow-y: auto;
+	overflow-x: hidden;
+	background-color: #333;
+	padding: 10px;
+}
+#lista {
+	 list-style: none;
+    font-size: 12px;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+}
+#lista li {
+	 border-top: 1px solid #666;
+	 color: white;
+}
+#lista li.bg-danger {
+    color: #333;
+}
+#lista li:last-child {
+	 border-bottom: 1px solid #666;
+}
+#lista li:hover {
+	 background-color: whitesmoke;
+	 color: #333;
+}
+#reset {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+#calcolatrice-title {
+	cursor: pointer;
+}
+.soldi {
+    border: 1px solid #999;
+    color: white;
+    font-weight: 900;
+    margin-bottom: 2px;
+    opacity: 0.8;
+    padding: 20px 0;
+    text-shadow: 0 0 2px black;
+    width: 30%;
+}
+.soldi:hover {
+	opacity: 1;
+	color: white;
+}
+#calcolatrice-010, #calcolatrice-020, #calcolatrice-050 {
+	background-color: gold;
+	border-radius: 50%;
+}
+#calcolatrice-1 {
+	background-color: silver;
+	border-radius: 50%;
+}
+#calcolatrice-2 {
+	background-color: #CD7F32;
+	border-radius: 50%;
+}
+#calcolatrice-5 {
+	background-color: green;
+}
+#calcolatrice-10 {
+	background-color: pink;
+}
+#calcolatrice-20 {
+	background-color: skyblue;;
+}
+#calcolatrice-50 {
+	background-color: orangered;;
+}
+
+#calcolatrice-reset {
+	width: 30%;
+}
+#calcolatrice-ok {
+	width: 30%;
+}
+#calcolatrice-pos {
+	width: 30%;
+	display: inline-block;
+}
+#label_pos {
+  padding: 20px 0;
+}
+#versatobox {
+	width: 60%;
+}
+#precedente_contenitore {
+	text-align: right;
+	border-top: 4px solid #999;
+   padding-top: 5px;
+}
+#concludi {
+	/*height: 15%;*/
+}
+#concludi_contenitore {
+	padding: 0px;
+}
+#nuovo-ordine {
+	width: 100%;
+	min-height: 100px;
+	text-shadow: 0 0 20px black;
+	font-weight: bold;
+}
+#rimanente {
+	font-weight: 900;
+	font-size: 23px;
+	width: 80px;
+}
+#versato {
+    color: blue;
+    font-size: 23px;
+    font-weight: 900;
+    line-height: 15px;
+    text-align: right;
+    width: 80px;
+    background-color: transparent;
+}
+
+#prog-precedente {
+	color: fuchsia;
+	font-weight: 900;
+	font-size: 23px;
+}
+#pagato-precedente {
+	color: blue;
+	font-weight: 900;
+	font-size: 23px;
+}
+#resto-precedente {
+	color: green;
+	font-weight: 900;
+	font-size: 23px;
+}
+#totale-precedente {
+	color: red;
+	font-weight: 900;
+	font-size: 23px;
+}
+
+.iorange {
+	background-color: orangered;
+}
+.ired {
+	background-color: orange !important;
+	color: white;
+}
+
+	
+/* STAMPA */	
+#copia-cliente {
+	background-color: pink;
+	}
+#copia-cucina {
+	background-color: yellow;
+	}
+.page-break {
+	display: none;
+	page-break-before: always;
+	}
+
+
+
+.ui-widget-header {
+   background-color: transparent;
+   border-width: 0;
+}
+#etichette {
+   height: 6%;
+}
+
+.compact-view #tabelle {
+	width: 80%;
+}
+.compact-view #info {
+	width: 20%;
+}
+.compact-view #info .col-sx {
+	width: 100%;
+}
+.compact-view #info .col-dx {
+	display: none;
+}
+
+.quick-view .reparto {
+	margin-bottom: 0;
+}
+.quick-view .tab-content > .etichette {
+	display: none;
+}
+.quick-view .cassa-rapida .elenco-categorie > li {
+	display: none;
+}
+.quick-view .cassa-rapida .elenco-categorie > li.active {
+	display: block;
+	width: 100%;
+}
+.compact-view .quick-view .td_prezzo {
+	display: none;
+}
+.quick-view .articolo {
+	padding: 9px 0;
+	font-size: 14px;
+	line-height: 26px;
+}
+
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+	border-top: none;
+}
+/*
+.btn-group-justified {
+    left: -2px;
+    position: relative;
+}
+*/
+ 
+
+.elenco-categorie > li {
+	border: 1px solid #ccc;
+	border-bottom-width: 0;
+	border-radius: 4px 4px 0 0;
+	overflow: hidden;
+}
+
+@media only screen and (min-width : 768px) {
+	#money, #optional {
+		height: 100%;
+		overflow-y: auto;
+	}
+}
+
+/*
+.compact-view #precedente, .compact-view #note, .compact-view #resoconto {
+	display: none;
+}
+*/
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	
+	body {
+		position: static;
+		height: auto;
+	}	
+	table, #tabelle {
+	    height: auto;
+	}
+	
+
+	td.td_add .div_add {
+	    width: 6%;
+	}
+	.articolo {
+	   text-align: left;
+    	white-space: nowrap;
+	}
+	#tabelle .etichette li {
+		display: none;	
+	}
+	#tabelle .etichette li.active {
+		display: block;	
+	}
+	#resoconto_contenitore {	
+		max-height: none;
+	}
+	
+	.elenco-categorie {
+		margin-top: 20px;
+	}
+	#tabelle {
+		padding-bottom: 20px;	
+	}
+	
+	#nuovo-ordine {
+		height: 100px !important;
+	}
+	#resoconto_contenitore {
+		height: auto !important;
+	}
+	
+}
+
+/*
+.btn-default-inverted {
+	color: white;
+	background-color: #333;
+}
+*/
+
+.table-condensed-2 > tbody > tr > td, .table-condensed-2 > tbody > tr > th, .table-condensed-2 > tfoot > tr > td, .table-condensed-2 > tfoot > tr > th, .table-condensed-2 > thead > tr > td, .table-condensed-2 > thead > tr > th {
+    padding: 1px;
+}
+
+
+h4.widget-title {
+	color: white;
+	text-shadow: 0 0 2px #333;
+	background-color: #87A9C6; /*#C0C0C0;*/
+	margin: -4px -11px 2px;
+	padding: 2px 10px;
+}
+#totali h4.widget-title {
+	margin-left: -5px;
+	margin-right: -5px;
+}
+.well-white {
+	border-color: #ccc;
+	box-shadow: 2px 2px 4px #999;
+}
+
+/*ul.elenco-categorie {
+	position: absolute;
+	width: 100%;
+}*/
+ol.reparto {
+	/*max-height: 100%;
+	overflow: auto;*/
+	/*margin-top: 50px;*/
+	/*padding-bottom: 50px;*/
+	background-color: white;
+	margin-bottom: 0;
+}
+ol.reparto li .td_add::after {
+	/*border-top: 2px solid white;
+	border-bottom: 2px solid white;*/
+	content: ' ';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	border-top: 1px solid #666;
+}
+ol.reparto li {
+	display: block;
+	position: relative;
+}
+
+
+.td_add .quantita {
+	border-radius: 0;
+}
+.td_add .diminuisci {
+	padding-left: 0;
+	padding-right: 0;
+	border-radius: 0 4px 4px 0;
+}
+.td_add .aumenta {
+	border-radius: 4px 0 0 4px;
+}
+.td_add .wello .aumenta,
+.td_add .diminuisci,
+#coperti_container .aumenta,
+#coperti_container .diminuisci {
+    font-size: 2em;
+    font-weight: bolder;
+    line-height: 24px;
+}
+.td_add.attivo .td_nota.none {
+	display: block;
+}
+
+
+
+#tabelle.force-btn-full-height .reparto .btn.full-height-asd {
+	height: 100%;
+}
+#tabelle.force-btn-full-height .tabs {
+	overflow: hidden;
+}
+
+#tabelle .tabs.cassa-rapida {
+    padding: 0 3px;
+}
+
+.wello .quantita-omaggio {
+	border-radius: 0;
+} 
+.wello .aumenta, .wello .quantita-omaggio, .wello .diminuisci {
+   width: 100%;
+}
+
+@media only screen and (max-width : 768px) {
+	#tabelle .tabs,
+	ol.reparto, 
+	.reparto > li,
+	#tabelle.force-btn-full-height .reparto .btn.full-height-asd {
+		height: auto !important;
+	}
+	#tabelle.force-btn-full-height .tabs {
+		overflow: visible;	
+	}
+	
+	.div_add .articolo > span {
+		line-height: 24px;
+	}
+
+}
+

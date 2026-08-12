@@ -1,0 +1,78 @@
+COSE DA FARE
+
+- stampa in locale senza aprire il file
+
+- pagina distribuzione valori undefined sui piatti serviti di recente
+
+- ordine in wifi
+-- qrcode sulla ricevuta
+-- redirect forzato su pagina prenotazione
+-- pagina di prenotazione (codice di prenotazione)
+
+- tempo di attesa medio
+-- comande da servire x media tempo piatto
+
+ANNULLA ORDINI
+
+Gestione sconti in percentuale.
+
+- Statistiche
+-- stampa diretta statistiche giorno
+
+- pulsanti prodotti di colori personalizzabili
+
+MULTI DISTRIBUZIONE
+
+Ingredienti venduti con OMAGGI!!!
+
+Carica LOGO
+
+Cartella ASSETS in cui inserire tutte le cartelle js, css, img, media, ecc.
+
+Colore reparto
+
+Storico sagra (con filtro dal al)
+
+- edit delle sessioni (elimina stop e aggiunta automatica logout e di nuovo login)
+
+WIN
+Elenco stampanti su windows
+
+Ricevute più compatte e carine e ottimizzate (su SCONTRINO)
+
+Nella stampa del reparto non separare le quantità normali e omaggio.
+
+Creo un file di backup ogni fine sessione, ripristinabile con una operazione di full sinc con il db mysql
+Area quindi riservata di caricamento backup o esporta, con file di dati dummy dimostrativi
+
+Verifico se c'è collegamento al db, altrimenti faccio installazione dove definisco le credenziali mysql e password amministratore
+Qui inserisco i dati base nelle tabelle (1 utente admin e 1 stampante)
+Poi mando l'utente a inserire i prodotti
+Poi deve inserire utenti e stampanti
+Poi Decidere le stampe dei reparti
+
+Impedire modifica prima stampante e primo utente, il primo utente è ADMIN, la prima stampante è DEFAULT, quindi disporre che se stampante è 1 allora non viene passato il valore della stampante nel comando di stampa
+
+File config
+File settings
+File BOOTSTRAP
+
+Inserire nella comanda il codice a barre sopra o sotto il numero progressivo
+Può tornare utile nel gestire le comande della cucina, sparandole invece di premere il pulsante corrispondente nel caso ne hai tante
+Ad ogni sparo avanza di stato
+
+Cambia nome testate in ricevute
+
+Statistiche:
+- top 5 prodotto più venduto per sessione
+- comanda più ricca
+- cassiere più efficiente
+- attesa media per comanda a sessione
+
+VERSIONE ONLINE
+- problemi di connessione
+  - fascia di avvertimento in cassa
+  - salvataggio catalogo in local storage db del browser
+  - progressivo in locale relativo alla cassa (es. 35A > 36A, 199B)
+  - stampa in locale tramite ssh
+  - creazione in locale della stampa (mi salvo in locale il template e sputo in html)

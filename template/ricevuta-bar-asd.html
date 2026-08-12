@@ -1,0 +1,121 @@
+<html>
+
+<head>
+	<style type="text/css">
+		.full-width {
+			width: 100%;		
+		}
+		.text-right {
+			text-align: right;		
+		}
+		.progressivo {
+			font-size: 3em;
+			border: 3px solid black;
+			border-radius: 10px;
+			padding: 10px;		
+			float: right;
+			text-align: center;
+			font-weight: bold;
+		}
+		.spacer {
+			width: 10%;		
+		}
+		.col-sx, .col-dx {
+			width: 45%;		
+		}
+		
+		table#dettaglio td {
+			border-top: 1px solid black;		
+		}
+		table#dettaglio {
+			border-bottom: 3px solid black;
+			width: 100%;		
+		}
+		#dettaglio-header {
+			font-weight: bold;		
+		}
+		.qnt {
+			width: 10%;		
+		}
+		.pronome {
+			width: 50%;
+		}
+		.subtot {
+			width: 40%;		
+		}
+	</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div id="header">
+<table class="full-width">
+	<tr><td colspan="3" class="text-right">{{nome-cassa}} [{{id-testata}}] {{data-ora}}</td></tr>
+	<tr class="row">
+		<td class="col-xs-6 col-sx">
+			<img src="template/img/logo.png" class="img-responsive">
+			<!--<h1>{{nome-evento}}</h1>-->
+		</td>
+		<td class="spacer">
+			&nbsp;
+		</td>
+		<td class="col-xs-6 col-dx text-right">
+			<h5>Progressivo:</h5>
+			<div class="progressivo">{{progressivo}}</div>
+			<h4 id="tavolo">Tavolo: {{tavolo}}</h4>
+			<h4 id="cliente">Cliente: {{cliente}}</h4>
+		</td>
+	</tr>
+</table>
+</div>
+
+<!--<hr />-->
+
+<div id="main">
+	<h5>Tipo: {{tipo}}</h5>
+	<h5>Coperti: {{coperti}}</h5>
+	
+	<h2>Dettaglio:</h2>
+	<table id="dettaglio">
+		<tr id="dettaglio-header"><th class="qnt">Qnt</th><th class="pronome">Prodotto</th><th class="subtot text-right">SubTotale</th></tr>
+		<tr class="prodotto"><td class="qnt">{{quantita-prodotto}}</td><td class="pronome">{{nome-prodotto}}</td><td class="subtot text-right"><small>{{quantita-prodotto}} x {{prezzo-prodotto}}&euro; = {{subtotale-prodotto}}&euro;</small></td></tr>
+	</table>
+	
+	<table class="full-width">
+		<tr>
+			<td><h3>TOTALE:</h3></td>
+			<td class="text-right"><h2>{{totale}}&euro;</h2></td>		
+		</tr>
+		<tr id="romana">
+			<td>Prezzo medio: {{romana}}&euro; per persona</td>
+			<td></td>		
+		</tr>
+		<tr id="pagato">
+			<td>Contanti: {{pagato}}&euro;</td>
+			<td></td>		
+		</tr>
+		<tr id="resto">
+			<td>Resto: {{resto}}&euro;</td>
+			<td></td>		
+		</tr>	
+	</table>
+</div>
+
+<!--<hr />-->
+
+<div id="footer">
+	<table>
+		<tr>
+			<td><h2>RICEVUTA CLIENTE</h2></td>
+			<td class="text-right"><small>{{testo-footer}}</small></td>		
+		</tr>
+	</table>
+</div>
+
+</div>
+
+</body>
+
+</html>

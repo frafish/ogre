@@ -1,0 +1,18 @@
+#copia-cliente {
+	background-color: pink;
+	}
+#copia-cucina {
+	background-color: yellow;
+	}
+.page-break {
+	display: none;
+	page-break-after: always;
+	}
+div {
+	border: 2px black solid;
+	padding: 50px;
+	}
+h1 {
+	color:red;
+	text-align:center;
+}

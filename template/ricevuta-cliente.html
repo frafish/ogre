@@ -1,0 +1,129 @@
+<html>
+
+<head>
+	<style type="text/css">
+		h1, h2, h3, h4, h5 { margin: 0; padding: 0; }
+		.full-width {
+			width: 100%;
+			margin: 0;	
+		}
+		.text-center {
+			text-align: center;		
+		}
+		.text-right {
+			text-align: right;		
+		}
+		.progressivo {
+			font-size: 3em;
+			border: 3px solid black;
+			border-radius: 10px;
+			padding: 10px;		
+			float: right;
+			text-align: center;
+			font-weight: bold;
+		}
+		.spacer {
+			width: 10%;		
+		}
+		.col-sx, .col-dx {
+			width: 45%;		
+		}
+		
+		table#dettaglio td {
+			border-top: 1px solid black;		
+		}
+		table#dettaglio {
+			border-bottom: 3px solid black;
+			width: 100%;		
+		}
+		#dettaglio-header {
+			font-weight: bold;	
+		}
+		.qnt {
+			width: 10%;		
+		}
+		.pronome {
+			width: 60%;
+		}
+		.subtot {
+			width: 30%;		
+		}
+		.maiuscolo {
+			text-transform: uppercase;		
+		}
+		#footer small {
+			font-size: 10px;		
+		}
+	</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div id="header">
+<table class="full-width">
+	<!--<tr><td colspan="3" class="text-right">{{nome-cassa}} [{{id-testata}}] {{data-ora}}</td></tr>-->
+	<tr class="row">
+		<td class="col-xs-6 col-sx">
+			<img src="template/img/logo.png" height="100" class="img-responsive">
+			<!--<h1>{{nome-evento}}</h1>-->
+		</td>
+		<td class="spacer">
+			&nbsp;
+		</td>
+		<td class="col-xs-6 col-dx text-right">
+			<small>ID: {{id-testata}} | cassa: {{nome-cassa}} | ore {{ora}} del {{data}}</small>
+			<h5>Progressivo:</h5>
+			<div class="progressivo">{{progressivo}}</div>
+			<div class="barre" style="display: none;">{{codice-barre}}</div>
+			<span id="tavolo">Tavolo: {{tavolo}}<br></span>
+			<span id="cliente">Cliente: {{cliente}}<br></span>
+			<!--<h4 id="tavolo">Tavolo: {{tavolo}}</h4>
+			<h4 id="cliente">Cliente: {{cliente}}</h4>-->
+		</td>
+	</tr>
+</table>
+</div>
+<div id="main">
+	<table class="full-width">
+		<tr>
+			<td><big>Tipo: {{tipo}}</big></td>
+			<td style="text-align: right;"><big class="text-right">Coperti: {{coperti}}</big></td>
+		</tr>
+	</table>	
+	
+	<table id="dettaglio">
+		<tr id="dettaglio-header"><th class="qnt" bgcolor="#333" color="#fff"><strong>Qnt</strong></th><th class="pronome" bgcolor="#333" color="#fff"><strong>Prodotto</strong></th><th class="subtot text-right" bgcolor="#333" color="#fff">Prezzo</th></tr>
+		<tr class="prodotto"><td class="qnt">{{quantita-prodotto}}</td><td class="pronome">{{nome-prodotto}}</td><td class="subtot text-right"><small>{{quantita-prodotto}} x {{prezzo-prodotto}}&euro; = {{subtotale-prodotto}}&euro;</small></td></tr>
+	</table>
+	
+	<table class="full-width">
+		<tr>
+			<td><h3>TOTALE:</h3></td>
+			<td class="text-right" colspan="2"><h2>{{totale}}&euro;</h2></td>		
+		</tr>
+		<tr>
+			<td id="romana">Pr.medio: {{romana}}&euro;</td>
+			<td id="pagato" class="text-center">Contanti: {{pagato}}&euro;</td>
+			<td id="resto" class="text-right">Resto: {{resto}}&euro;</td>
+		</tr>
+	</table>
+</div>
+
+<!--<hr />-->
+
+<div id="footer">
+	<table class="full-width">
+		<tr>
+			<td><h2 class="maiuscolo">RICEVUTA {{tipo-ricevuta}}</h2></td>
+			<td class="text-right"><small><small>{{testo-footer}}</small></small></td>		
+		</tr>
+	</table>
+</div>
+
+</div>
+
+</body>
+
+</html>

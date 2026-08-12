@@ -1,0 +1,41 @@
+Requisiti:
+
+
+- PERMESSI di modifica (777) alla cartella WWW e sottocartelle
+--- sudo chmod 777 -R /var/www (attenzione all'indirizzo basedir)
+
+- PHP - MYSQL - APACHE (o un altro web server)
+-- sudo tasksel
+--- impostare user e password del DB, da settare poi nel file di config
+--- modificare il file di configurazione di apache /etc/apache2/envvars avviando il servizio con i permessi utente (abilitato alla stampa)
+	export APACHE_RUN_USER=fra
+	export APACHE_RUN_GROUP=fra
+
+- PHPMYADMIN
+-- scaricare e scompattare l'ultima versione di phpMyAdmin nell root
+-- importare la struttura SQL vuota
+
+- CUPS
+-- sudo apt-get install printer-driver-all
+-- installare le stampanti
+--- tutte le HP (vecchie P1505n e nuove P1102w) da installare tramite HPLIP (installa driver e plugin) e non da CUPS (verranno aggiunte in automatico)
+--- Samsung 2955nd con driver default raccomandati, ma attenzione a configurare il formato corretto
+--- Samsung 2525w usare i driver default ma versione 2.0.0 [en]
+-- salvare le stampanti in db
+
+- LPR
+--- FACOLTATIVO: con kuser aggiungere l'utente nei gruppi root e lp - oppure per stampare via php bisogna aggiungere www-data al gruppo lp
+--- file "/etc/apache2/envvars:19" sostituire la stringa con "APACHE_RUN_USER=NomeTuoUtente"
+OPPURE
+- SSH
+-- sudo tasksel (per server OpenSSH)
+-- sudo apt-get install libssh2-php (per integrazione con php)
+-- configurare nome utente e password (dell'utente collegato al server) nel file di config
+
+
+DRIVER STAMPANTI
+per le stampanti installa i seguenti pacchetti (che dovresti trovare nelle repo ufficiali): 
+- per HP > hplip 
+- per SAMSUNG > suldr (guida: https://wiki.ubuntu-it.org/Hardware/StampantiScanner/SamsungLinuxDriver)
+- altre > printer-driver-all
+

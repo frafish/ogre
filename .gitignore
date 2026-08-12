@@ -1,0 +1,8 @@
+
+db/
+backup/
+ricevute/
+STORICO/
+lib/SumatraPDF.exe
+lib/tcpdf/
+import/
