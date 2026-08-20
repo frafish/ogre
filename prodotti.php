@@ -140,7 +140,7 @@ function importa_prodotti($divisore = ';') {
 							$prezzo = str_replace(',', '.', $prezzo); //number_format(floatval($prezzo), 2, '.', '');
 							$nome = normalize_text($nome);
 							$corto = normalize_text($corto);
-							$id_prodotto = find_one_by('prodotti', 'nome = "'.$nome.'"', null, 'id');
+							$id_prodotto = find_one_by('prodotti', 'nome = "'.$nome.'" AND id_categorie = '.$id_categoria, null, 'id');
 							if($id_prodotto) {
 								$query = 'UPDATE prodotti SET corto = "'.$corto.'", prezzo = '.$prezzo.', id_categorie = '.$id_categoria.', id_reparti = '.$id_reparto.', ordine = '.$rkey.' WHERE id = '.$id_prodotto;
 								db_query($query, false, false);	

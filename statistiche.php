@@ -207,7 +207,7 @@ if(isset($_REQUEST['azione'])) {
 			$totale_prodotto = 0;
 			$prima_testata_sessione = find_one_by('testate', "time > '".$time_start_sessione."'", 'time');
 			$time_begin = strtotime($prima_testata_sessione['time']);	
-			$prodettagli = db_query("SELECT prodotti.id as id, prodotti.nome as nome, SUM(dettagli.quantita) as quantita, SUM(dettagli.omaggio) as omaggio FROM dettagli, prodotti, testate WHERE dettagli.id_prodotti = prodotti.id AND dettagli.id_testate = testate.id AND testate.time >= '".$time_start_sessione."' AND testate.time < '".$sessione['time']."' GROUP BY prodotti.id");		
+			$prodettagli = db_query("SELECT prodotti.id as id, prodotti.nome as nome, SUM(dettagli.quantita) as quantita, SUM(dettagli.omaggio) as omaggio FROM dettagli, prodotti, testate WHERE dettagli.id_prodotti = prodotti.id AND dettagli.id_testate = testate.id AND testate.time >= '".$time_start_sessione."' AND testate.time < '".$sessione['time']."' GROUP BY prodotti.nome");		
 			if(!empty($prodettagli)) { ?>
 			<li class="aday list-group-item clearfix">
 				<h3><?php echo $settimana[date("w",$time_begin)]; ?> <small><?php echo $prima_testata_sessione['time']; ?> - <?php echo $sessione['time']; ?></small></h3>
@@ -231,7 +231,7 @@ if(isset($_REQUEST['azione'])) {
 		}
 		$time_start_sessione = $sessione['time'];
 	}
-	$all_prodettagli = db_query("SELECT prodotti.id as id, prodotti.nome as nome, SUM(dettagli.quantita) as quantita, SUM(dettagli.omaggio) as omaggio FROM dettagli, prodotti WHERE dettagli.id_prodotti = prodotti.id GROUP BY prodotti.id");		
+	$all_prodettagli = db_query("SELECT prodotti.id as id, prodotti.nome as nome, SUM(dettagli.quantita) as quantita, SUM(dettagli.omaggio) as omaggio FROM dettagli, prodotti WHERE dettagli.id_prodotti = prodotti.id GROUP BY prodotti.nome");		
 	if(!empty($all_prodettagli)) { ?>
 	<li class="aday list-group-item clearfix">
 		<h2>TOTALI:</h2>

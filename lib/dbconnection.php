@@ -671,7 +671,7 @@ function dev_log($msg, $suffisso = null) {
 		$suffisso = ''; 
 	}
 	if (!is_dir(CARTELLA_LOG)) {
-		mkdir(CARTELLA_LOG);			
+		mkdir(CARTELLA_LOG, 0777, true);
 	}
 
 	$dir = CARTELLA_LOG.DIRECTORY_SEPARATOR.date('Ymd').$suffisso.".txt";
