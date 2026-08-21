@@ -1,0 +1,37 @@
+<html>
+
+<body style="margin: 0;">
+
+<div class="container" style="height: 100vh; width: 100%; overflow: hidden;">
+
+	<form action="" style="display: flex;">
+		<input type="number" name="num" min="1" style="height: 90vh; width: 95%; font-size: 90vh; outline: none; border: none; background-color: transparent;">
+		<div class="color" style="display: flex; flex-direction: column; height: 100vh;">
+			<input type="hidden" name="color">
+
+			<button type="button" style="background-color: orange; padding: 10px; height: 14%;" data-color="orange">ARANCIO</button>
+			<button type="button" style="background-color: white; padding: 10px; height: 14%" data-color="white">BIANCO</button>
+			<button type="button" style="background-color: blue; padding: 10px; height: 14%" data-color="blue">BLU</button>
+			<button type="button" style="background-color: green; padding: 10px; height: 14%" data-color="green">VERDE</button>
+			<button type="button" style="background-color: pink; padding: 10px; height: 14%" data-color="pink">ROSA</button>
+			<button type="button" style="background-color: yellow; padding: 10px; height: 14%" data-color="yellow">GIALLO</button>
+            <button type="button" style="background-color: #99cbff; padding: 10px; height: 14%" data-color="#99cbff">AZZURRO</button>
+
+		</div>
+
+	</form>
+
+</div>
+<script>
+var buttons = document.querySelectorAll(".color button");
+console.log(buttons);
+buttons.forEach(function(elem) {
+	elem.addEventListener("click", function(){
+		console.log(this.dataset.color);
+		document.body.style.backgroundColor = this.dataset.color;
+	});
+});
+</script>
+
+</body>
+</html>
