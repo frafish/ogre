@@ -56,6 +56,10 @@ if(isset($_REQUEST['azione'])) {
 			}
 			get_csv(null, $csv, null, true, time().'_prodotti_sagra.csv');
 			break;
+		case 'aggiorna_qnt':
+			aggiorna_quantita_prodotti();
+			set_alert('Quantità dei prodotti aggiornate in base alle scorte di magazzino e vendite.', 'success');
+			break;
 		case 'erase':
 			$cancella = true;
 			if (file_exists(DB_FILE)) {
@@ -330,7 +334,9 @@ if(is_user()) { // controllo se l'utente è autenticato
 		  </div>
 		  <div class="panel-body">
 		    <input name="file" id="file" type="file" class="form-control">
-		    <?php if (db_count('prodotti')) { ?><a class="btn btn-success mt-10 pull-right" title="Esporta l'elenco attuale dei prodotti già inseriti" target="_blank" href="?azione=export"><span class="glyphicon glyphicon-export" aria-hidden="true"></span> Esporta</a><?php } ?>
+		    <?php if (db_count('prodotti')) { ?>
+                <a class="btn btn-success mt-10 pull-right" title="Esporta l'elenco attuale dei prodotti già inseriti" target="_blank" href="?azione=export"><span class="glyphicon glyphicon-export" aria-hidden="true"></span> Esporta</a>
+            <?php } ?>
 		    <input type="hidden" value="import" name="azione">
 			 <input class="btn btn-lg btn-warning mt-10" type="submit" name="submit" value="Carica" title="Aggiorna i prodotti già presenti e aggiunge quelli nuovi" />
 		  </div>
@@ -436,6 +442,7 @@ if(is_user()) { // controllo se l'utente è autenticato
     		</tbody>
     	</table>
 <input type="hidden" value="aggiorna" name="azione">
+<a class="btn btn-lg btn-info pull-right mt-20 mb-20" style="margin-left: 10px;" title="Forza il ricalcolo delle quantità dei prodotti in base alle scorte e alle vendite" href="?azione=aggiorna_qnt"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> AGGIORNA QUANTITA'</a>
 <input type="submit" class="btn btn-lg btn-warning pull-right mt-20 mb-20" value="SALVA">
 <div class="clearfix"></div>
 </form>

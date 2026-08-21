@@ -6,3 +6,4 @@ STORICO/
 lib/SumatraPDF.exe
 lib/tcpdf/
 import/
+lib/Mobile_Detect.php

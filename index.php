@@ -97,6 +97,11 @@ include("lib/dbconnection.php");
 		<?php if (is_superman()) { ?>
 			<li class="col-md-2"><a class="btn btn-lg btn-<?php if (db_count('reparti', 'fila = 1') && db_count('utenti', 'status = 1') && db_count('casse', 'status = 1')) { ?>success<?php } else { ?>warning<?php } ?> btn-block mb-20" href="impostazioni.php">Impostazioni<br /><big><i class="fa fa-cog"></i></big></a></li>
 			<li class="col-md-2"><a class="btn btn-lg btn-danger btn-block mb-20" href="db.php">Database<br /><big><i class="fa fa-database"></i></big></a></li>
+            <?php 
+            $libs_missing = !file_exists(__DIR__.'/lib/tcpdf/tcpdf.php') || !file_exists(__DIR__.'/lib/SumatraPDF.exe') || !file_exists(__DIR__.'/lib/Mobile_Detect.php');
+            $lib_btn_class = $libs_missing ? 'btn-danger' : 'btn-info';
+            ?>
+			<li class="col-md-2"><a class="btn btn-lg <?php echo $lib_btn_class; ?> btn-block mb-20" href="aggiorna_librerie.php">Librerie<br /><big><i class="fa fa-refresh"></i></big></a></li>
 		<?php } ?>
 		
 		<li class="col-md-2 hidden"><a class="btn btn-lg btn-primary btn-block mb-20" href="prenota.php">Prenota<br /><big><i class="fa fa-ticket"></i></big></a></li>

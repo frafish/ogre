@@ -217,6 +217,16 @@ function print_import_export($table) {
                 ?>
 
                     <?php print_alerts(); ?>
+                    
+                    <?php
+                    if (!file_exists(__DIR__.'/lib/tcpdf/tcpdf.php') || !file_exists(__DIR__.'/lib/SumatraPDF.exe') || !file_exists(__DIR__.'/lib/Mobile_Detect.php')) {
+                    ?>
+                        <div class="alert alert-danger text-center">
+                            <h3><span class="glyphicon glyphicon-warning-sign"></span> Librerie di sistema mancanti</h3>
+                            <p>Per il corretto funzionamento della webapp, è necessario installare TCPDF, SumatraPDF e Mobile_Detect.</p>
+                            <a href="?azione=download_libs" class="btn btn-lg btn-danger mt-10"><span class="glyphicon glyphicon-download-alt"></span> SCARICA E INSTALLA LIBRERIE</a>
+                        </div>
+                    <?php } ?>
 
                 <ul class="nav nav-tabs" role="tablist">
                     <?php 
